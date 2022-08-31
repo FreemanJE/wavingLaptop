@@ -1,0 +1,293 @@
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: black;
+  }
+  
+  .container {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    width: 7vmin;
+    height: 70vmin;
+    position: relative;
+    background:
+      linear-gradient(
+        -30deg,
+        green 33%,
+        white 33.01%,
+        white 33.5%,
+        pink 33.51%,
+        pink 66%,
+        white 66.01%,
+        white 66.5%,
+        green 66.51% 
+      );
+  }
+  
+  .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    pointer-events: none;
+    /* background: linear-gradient( 
+      30deg,
+      transparent 33%,
+      white 33.01%,
+      white 33.5%,
+      transparent 33.51%,
+      transparent 66%,
+      white 66.01%,
+      white 66.5%,
+      transparent 66.51% 
+    );*/
+  }
+  
+  /* .canvas {
+    width: 50%;
+  } */
+  
+  .line {
+    fill: #1c1a16;
+    stroke: white;
+    stroke-width: 10;
+    transition: .2s all;
+    transform-origin: bottom center;
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: "Operator Mono", menlo, monaco, monospace;
+    font-size: 8vmin;
+    color: green;
+    transform-style: preserve-3d;
+  }
+  
+  .text::after {
+    position: absolute;
+    z-index: -1;
+    top: 3vmin;
+    color: transparent;
+    text-shadow: 0 0 1.5vmin hsla(345, 100%, 27.6%, .4);
+  }
+  .pic-div {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 25%;
+      background-color: black;
+      position: absolute;
+      transform: rotate(45deg);
+      animation: pic-bkg 8s 5s infinite ease-in
+  }
+  img {
+      /* width: 25rem; */
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 35%;
+      animation: pic 8s 5s infinite;
+
+  }
+  
+  .thank {
+    transform:
+      rotateX(45deg)
+      rotateZ(-40deg)
+      translate(-40%, -540%);
+    animation: thank 8s infinite;
+  }
+  
+  .thank::after {
+    content: "backEnd";
+    left: -10%;
+    animation: thank-after 8s infinite;
+  }
+  
+  .you {
+    transform:
+      rotateX(45deg)
+      rotateZ(40deg)
+      translate(-50%, -410%);
+    animation: you 8s infinite;
+  }
+  
+  .you::after {
+    content: "web";
+    left: 20%;
+    animation: you-after 8s infinite;
+  }
+  
+  .eight {
+    transform:
+      rotateX(45deg)
+      rotateZ(40deg)
+      translate(-100%, 410%);
+    animation: eight 8s infinite;
+  }
+  
+  .eight::after {
+    content: "dev";
+    left: 20%;
+    animation: eight-after 8s infinite;
+  }
+  
+  .followers {
+    font-size: 7vmin;
+    transform:
+      rotateX(45deg)
+      rotateZ(-40deg)
+      translate(-12%, 225%);
+    animation: followers 8s infinite;
+  }
+  
+  .followers::after {
+    content: "backEnd";
+    left: -10%;
+    animation: followers-after 8s infinite;
+  }
+@keyframes pic-bkg {
+      0%{background-color: black;}
+      25%{background-color: rgb(98, 50, 50) }
+      50% {
+        background-color: rgb(31, 168, 31);
+        width: -10%;
+    }
+    75% { width: rgb(0, 41, 0); 
+    }
+}
+
+@keyframes pic {
+      0% { width: 100%;}
+      35% { width: 75%; }
+      70% {width: 40%; } 
+  }
+  img {
+      animation-timing-function: ease-out;
+}
+
+  
+@keyframes thank {
+    from, 24%, to {
+      transform:
+        rotateX(45deg)
+        rotateZ(-40deg)
+        translate(-40%, -540%);
+    }
+    10%, 14% {
+      transform:
+        rotateX(45deg)
+        rotateZ(-40deg)
+        translate(-40%, -540%)
+        translateZ(4vmin);
+    }
+}
+  
+  @keyframes thank-after {
+    from, 24%, to {
+      top: 3vmin;
+      left: -10%;
+      text-shadow: 0 0 1.5vmin #fcf9fa66;
+    }
+    10%, 14% {
+      top: 5.5vmin;
+      left: -20%;
+      text-shadow: 0 0 2.5vmin #fcf9fa66;;
+    }
+  }
+  
+  @keyframes you {
+    from, 14%, 38%, to {
+      transform:
+        rotateX(45deg)
+        rotateZ(40deg)
+        translate(-50%, -410%);
+    }
+    24%, 28% {
+      transform:
+        rotateX(45deg)
+        rotateZ(40deg)
+        translate(-50%, -410%)
+        translateZ(4vmin);
+    }
+  }
+  
+  @keyframes you-after {
+    from, 14%, 38%, to {
+      top: 3vmin;
+      left: 20%;
+      text-shadow: 0 0 1.5vmin #fcf9fa66;;
+    }
+    24%, 28% {
+      top: 6vmin;
+      left: 35%;
+      text-shadow: 0 0 2.5vmin #fcf9fa66;;
+    }
+  }
+  
+  @keyframes eight {
+    from, 28%, 52%, to {
+      transform:
+        rotateX(45deg)
+        rotateZ(40deg)
+        translate(-100%, 410%);
+    }
+    38%, 42% {
+      transform:
+        rotateX(45deg)
+        rotateZ(40deg)
+        translate(-100%, 410%)
+        translateZ(4vmin);
+    }
+  }
+  
+  @keyframes eight-after {
+    from, 28%, 52%, to {
+      top: 3vmin;
+      left: 20%;
+      text-shadow: 0 0 1.5vmin #fcf9fa66;;
+    }
+    38%, 42% {
+      top: 6vmin;
+      left: 35%;
+      text-shadow: 0 0 2.5vmin #fcf9fa66;;
+    }
+  }
+  
+  @keyframes followers {
+    from, 42%, 66%, to {
+      transform:
+        rotateX(45deg)
+        rotateZ(-40deg)
+        translate(-12%, 225%);
+    }
+    52%, 56% {
+      transform:
+        rotateX(45deg)
+        rotateZ(-40deg)
+        translate(-12%, 225%)
+        translateZ(4vmin);
+    }
+  }
+  
+  @keyframes followers-after {
+    from, 42%, 66%, to {
+      top: 3vmin;
+      left: -10%;
+      text-shadow: 0 0 1.5vmin #fcf9fa66;
+    }
+    52%, 56% {
+      top: 6vmin;
+      left: -15%;
+      text-shadow: 0 0 2.5vmin #fcf9fa66;;
+    }
+  }
+
+  h5 {
+    color: white;
+  }
